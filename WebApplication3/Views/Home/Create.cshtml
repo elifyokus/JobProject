@@ -1,0 +1,21 @@
+﻿@page
+@model WebApplication3.Views.Home.CreateModel
+
+@{
+    ViewBag.Title = "Create Application";
+}
+
+<h2>Create Application</h2>
+
+@using (Html.BeginForm("Create", "Applications", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.JobTitle)
+        @Html.TextBoxFor(model => model.JobTitle, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ApplicantName)
+        @Html.TextBoxFor(model => model.ApplicantName, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+}

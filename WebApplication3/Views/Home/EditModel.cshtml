@@ -1,0 +1,22 @@
+﻿@page
+@model WebApplication3.Views.Home.EditModel
+
+@{
+    ViewBag.Title = "Edit Application";
+}
+
+<h2>Edit Application</h2>
+
+@using (Html.BeginForm("Edit", "Applications", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.ApplicationID)
+    <div class="form-group">
+        @Html.LabelFor(model => model.JobTitle)
+        @Html.TextBoxFor(model => model.JobTitle, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ApplicantName)
+        @Html.TextBoxFor(model => model.ApplicantName, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}
